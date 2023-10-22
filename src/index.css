@@ -3,3 +3,22 @@
   padding: 0;
   list-style: none;
 }
+
+body {
+  display: flex;
+  width: 100%;
+}
+
+#root {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.qrcodebox {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  justify-self: center;
+  text-align: center;
+}

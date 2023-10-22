@@ -1,8 +1,10 @@
+import QrCodeBox from "./components/QrCodeBox";
+
 function App() {
   return (
     <>
       <div>
-        <h1>hi</h1>
+        <QrCodeBox />
       </div>
     </>
   );

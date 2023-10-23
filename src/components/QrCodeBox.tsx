@@ -1,35 +1,24 @@
-import QRCode from "qrcode";
+import QrCodeValue from "../utils/QrCodeValue";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 
 function QrCodeBox() {
-  const [link, setLink] = useState("");
-  const [qr, setQr] = useState("");
-  const [placeholder, setPlaceholder] = useState("e.g. https://yourlink.com");
-  const [isRed, setIsRed] = useState(false);
+  const [value, setValue] = useState<string>("");
+  const [qr, setQr] = useState<string>("");
+  const [placeholder, setPlaceholder] = useState<string>(
+    "e.g. https://yourlink.com"
+  );
 
   const GenerateQRCode = () => {
     setQr("");
-
-    QRCode.toDataURL(
-      link,
-      {
-        width: 200,
-        margin: 2,
-        color: {
-          dark: "#000000",
-          light: "#FFFFFF",
-        },
-      },
-      (err, link) => {
-        if (err) {
-          setIsRed(true);
-          setPlaceholder("Link is required.");
-        }
-        setQr(link);
-      }
-    );
+    const qrValue = QrCodeValue(value);
+    if (!qrValue) {
+      setPlaceholder("Link is required.");
+      return;
+    } else {
+      setQr(qrValue);
+    }
   };
 
   return (
@@ -44,8 +33,8 @@ function QrCodeBox() {
         <input
           type="text"
           placeholder={placeholder}
-          value={link}
-          onChange={(e) => setLink(e.target.value)}
+          value={value}
+          onChange={(e) => setValue(e.target.value)}
         />
       </div>
       <div className="hitGenerate">

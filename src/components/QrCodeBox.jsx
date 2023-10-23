@@ -44,7 +44,6 @@ function QrCodeBox() {
         <input
           type="text"
           placeholder={placeholder}
-          className={`input ${isRed ? "red-placeholder" : ""}`}
           value={link}
           onChange={(e) => setLink(e.target.value)}
         />

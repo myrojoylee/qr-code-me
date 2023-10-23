@@ -75,8 +75,11 @@ h2 {
 }
 
 input {
+  display: flex;
+  align-self: end;
   width: 100%;
-  padding: 0.25em;
+  height: fit-content;
+  padding: 0.15em 0.25em;
 }
 
 img {
@@ -88,15 +91,7 @@ img {
 button {
   display: flex;
   padding: 0 0.25em;
-  width: 50%;
-}
-
-.red-placeholder::placeholder {
-  color: red;
-}
-
-.red-outline {
-  border: red;
+  width: fit-content;
 }
 
 @media only screen and (max-width: 768px) {
@@ -110,9 +105,18 @@ button {
   .hitGenerate {
     flex-direction: column;
     align-items: center;
+    width: 160px;
+  }
+
+  h2 {
+    text-align: center;
   }
 
   input {
-    width: 120px;
+    width: 150px;
+  }
+
+  button {
+    width: 100%;
   }
 }

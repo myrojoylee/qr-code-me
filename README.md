@@ -22,7 +22,7 @@ Below is a short demo demonstrating the app.
 
 ## Sources/Credits
 
-Code was adapted from [here](https://medium.com/@farheen.jet264/how-to-generate-download-qr-code-in-react-js-8085f196aac0).
+JavaScript code adapted from [here](https://medium.com/@farheen.jet264/how-to-generate-download-qr-code-in-react-js-8085f196aac0) and TypeScript migration was adapted from [here](https://dev.to/franciscomendes10866/how-to-create-a-qr-code-with-react-5aj9).
 
 ## License
 
